@@ -63,7 +63,7 @@ final class HandlerScheduler extends Scheduler {
             }
 
             run = RxJavaPlugins.onSchedule(run);
-
+            // 注意在生成ScheduledRunnable对象时的第二个run参数，其实是传的它：
             ScheduledRunnable scheduled = new ScheduledRunnable(handler, run);
 
             Message message = Message.obtain(handler, scheduled);

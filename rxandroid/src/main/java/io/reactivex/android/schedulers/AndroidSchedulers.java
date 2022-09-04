@@ -25,7 +25,7 @@ import io.reactivex.android.plugins.RxAndroidPlugins;
 public final class AndroidSchedulers {
 
     private static final class MainHolder {
-
+        //看到这个是不是就能明白最终肯定是通过Handler来进行Ui线程切换
         static final Scheduler DEFAULT = new HandlerScheduler(new Handler(Looper.getMainLooper()));
     }
 
